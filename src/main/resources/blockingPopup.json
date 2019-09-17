@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Refer a Friend</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <style>
+        body, html, p, div {
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            padding-bottom: 14px;
+        }
+    </style>
+</head>
+<body style="font-family: Arial, sans-serif;">
+    <div style="width: 90%; padding: 1% 5%;">
+        <div style="font-size: 22px; font-weight: 600; padding-bottom: 8px; text-align: center;">INFO</div>
+        <div style="padding: 0 10px; font-size: 15px;">
+            <p>You are not yet eligible for referring your friends.</p>
+            <p style="font-size: 18px; font-weight: 500; padding: 14px 0 4px; text-decoration: underline">Referral Criteria:</p>
+            <ol style="padding: 0 20px">
+                
+                <li>You should have at least have 1 Successful Deposit OR Withdrawal.</li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>
