@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -68,14 +66,13 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>8.0.15</version>
+ 			<version>8.0.15</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<version>1.12.4</version>
-		</dependency>
+			</dependency>
 
 		<dependency>
 			<groupId>com.atomikos</groupId>
@@ -83,11 +80,11 @@
 			<version>4.0.6</version>
 		</dependency>
 
-		<dependency>
-			<groupId>com.atomikos</groupId>
-			<artifactId>transactions-jta</artifactId>
-			<version>4.0.6</version>
-		</dependency>
+<!-- 		<dependency> -->
+<!-- 			<groupId>com.atomikos</groupId> -->
+<!-- 			<artifactId>transactions-jta</artifactId> -->
+<!-- 			<version>4.0.6</version>$NO-MVN-MAN-VER$ -->
+<!-- 		</dependency> -->
 
 		<dependency>
 			<groupId>com.atomikos</groupId>
@@ -117,10 +114,6 @@
 			<artifactId>spring-boot-starter-amqp</artifactId>
 		</dependency>
 		
-		<dependency>
-			<groupId>org.springframework.retry</groupId>
-			<artifactId>spring-retry</artifactId>
-		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -152,15 +145,44 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-mail</artifactId>
         </dependency>
+<!--         Liquibase Plugin -->
+        
+	<dependency>
+		<groupId>org.liquibase</groupId>
+		<artifactId>liquibase-core</artifactId>
+	</dependency>
+	<dependency>
+      <groupId>org.liquibase</groupId>
+      <artifactId>liquibase-maven-plugin</artifactId>
+      <version>2.0.5</version>
+</dependency>
+	<dependency>
+		<groupId>com.h2database</groupId>
+		<artifactId>h2</artifactId>
+		<scope>runtime</scope>
+	</dependency>
 	</dependencies>
 
+   
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-
 			</plugin>
+			<plugin>
+        <groupId>org.liquibase</groupId>
+        <artifactId>liquibase-maven-plugin</artifactId>
+        <version>2.0.5</version>
+        <configuration>
+        <propertyFileWillOverride>true</propertyFileWillOverride>
+        <propertyFile>src/main/resources/liquibase/liquibase-dev.properties</propertyFile>
+		<changeLogFile>src/main/resources/liquibase/db-changelog-master.xml</changeLogFile>  
+		<tasks>
+		<echo>********** Configuring the liquibase **************</echo>
+		</tasks>                
+        </configuration>                
+    </plugin> 
 		</plugins>
 	</build>
 

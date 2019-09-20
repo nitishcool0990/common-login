@@ -2,7 +2,7 @@ package com.sb.main.DBConfig;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
-@ConfigurationProperties(prefix = "cardplay.datasource")
+@ConfigurationProperties(prefix = "sb.datasource")
 public class SBDatasourceProperties {
 
 	private String url;
