@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: SBService
+Implementation-Version: 2.1.3.RELEASE
+Built-By: Nitish
+Implementation-Vendor-Id: com.sb.main
+Build-Jdk: 1.8.0_181
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/SBService
+Created-By: Maven Integration for Eclipse
+Main-Class: com.sb.main.MainApplication
+

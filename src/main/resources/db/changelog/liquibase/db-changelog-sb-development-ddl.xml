@@ -1,0 +1,38 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+                   
+   <changeSet author="Tripti" id="db-changelog-sb-development-ddl_20190920_001"
+		failOnError="true" labels="create Tables script">
+	<sql>
+	CREATE TABLE `sb_user` (`user_id` INT NOT NULL, `email_id` VARCHAR(45) NOT NULL,
+	`watsapp_num` VARCHAR(45) NOT NULL,
+	`password` VARCHAR(45) NOT NULL,
+	`client_name` VARCHAR(45) NULL,
+	`is_admin` TINYINT NULL,
+	`is_active` TINYTEXT NOT NULL,
+	`last_login` TIMESTAMP NULL,
+	`reason` VARCHAR(45) NULL,
+	`created_on` TIMESTAMP NOT NULL,
+	`modified_on` TIMESTAMP NULL,
+	PRIMARY KEY (`user_id`),
+	UNIQUE INDEX `email_id_UNIQUE` (`email_id` ASC),
+	UNIQUE INDEX `watsapp_num_UNIQUE` (`watsapp_num` ASC));
+
+	CREATE TABLE `sb_user_profile` ( `user_profile_id` INT(11) NOT NULL, `user_id` INT(11) NOT NULL,
+	`first_name` VARCHAR(45) NOT NULL,
+	`last_name` VARCHAR(45) NULL,
+	`mobile_num` INT NULL,
+	`default_add` VARCHAR(45) NOT NULL,
+	`secondary_add` VARCHAR(45) NULL,
+	`modified_on` TIMESTAMP NULL,
+	`created_on` TIMESTAMP NULL,
+	PRIMARY KEY (`user_profile_id`),
+	UNIQUE INDEX `user_id_UNIQUE` (`user_id` ASC));  
+	
+	        
+   </sql>  
+    </changeSet>                
+                        
+</databaseChangeLog>
