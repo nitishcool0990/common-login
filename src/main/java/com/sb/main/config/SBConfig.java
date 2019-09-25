@@ -21,7 +21,7 @@ import com.sb.main.DBConfig.SBDatasourceProperties;
 
 @Configuration
 @DependsOn("transactionManager")
-@EnableJpaRepositories(basePackages = "com.sb.main.dao", entityManagerFactoryRef = "sbEntityManager", transactionManagerRef = "transactionManager")
+@EnableJpaRepositories(basePackages = "com.sb.main.repository", entityManagerFactoryRef = "sbEntityManager", transactionManagerRef = "transactionManager")
 @EnableConfigurationProperties(SBDatasourceProperties.class)
 public class SBConfig {
 
