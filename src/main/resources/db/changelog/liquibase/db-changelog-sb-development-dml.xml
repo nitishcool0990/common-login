@@ -4,8 +4,48 @@
                         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
                    
                    
-                   
-                   
-                        
-                        
+                  
+  <changeSet author="Tripti" id="db-changelog-sb-development-dml_20190926_001"
+		failOnError="true" labels="Alter Script for AI">
+	<sql>      
+
+ALTER TABLE `sb_user_profile` 
+CHANGE COLUMN `user_profile_id` `user_profile_id` INT(11) NOT NULL AUTO_INCREMENT ;
+
+ALTER TABLE `sb_daily_stock` 
+CHANGE COLUMN `stock_id` `stock_id` INT(11) NOT NULL AUTO_INCREMENT ;
+
+ALTER TABLE `sb_invoice` 
+CHANGE COLUMN `invoice_id` `invoice_id` INT(11) NOT NULL AUTO_INCREMENT ;
+
+ALTER TABLE `sb_invoice_detail` 
+CHANGE COLUMN `invoice_detail_id` `invoice_detail_id` INT(11) NOT NULL AUTO_INCREMENT ;
+
+ALTER TABLE `sb_item` 
+CHANGE COLUMN `item_code` `item_code` INT(11) NOT NULL AUTO_INCREMENT ;
+
+ALTER TABLE `sb_item_details` 
+CHANGE COLUMN `item_details_id` `item_details_id` INT(11) NOT NULL AUTO_INCREMENT ;
+
+ALTER TABLE `sb_measure` 
+CHANGE COLUMN `measure_id` `measure_id` INT(11) NOT NULL AUTO_INCREMENT ;
+
+ALTER TABLE `sb_return_detail` 
+CHANGE COLUMN `return_detail_id` `return_detail_id` INT(11) NOT NULL AUTO_INCREMENT ;
+
+ALTER TABLE `sb_user` 
+CHANGE COLUMN `user_id` `user_id` INT(11) NOT NULL AUTO_INCREMENT ;          
+  </sql>  
+    </changeSet>                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                                
 </databaseChangeLog>

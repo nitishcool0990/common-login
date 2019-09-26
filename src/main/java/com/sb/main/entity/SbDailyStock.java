@@ -2,7 +2,6 @@ package com.sb.main.entity;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import java.sql.Timestamp;
 
 
 /**
@@ -12,16 +11,13 @@ import java.sql.Timestamp;
 @Entity
 @Table(name="sb_daily_stock")
 @NamedQuery(name="SbDailyStock.findAll", query="SELECT s FROM SbDailyStock s")
-public class SbDailyStock implements Serializable {
+public class SbDailyStock extends BaseEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="stock_id")
 	private int stockId;
-
-	@Column(name="created_on")
-	private Timestamp createdOn;
 
 	@Lob
 	@Column(name="is_active")
@@ -33,9 +29,6 @@ public class SbDailyStock implements Serializable {
 
 	@Column(name="item_code")
 	private String itemCode;
-
-	@Column(name="modified_on")
-	private Timestamp modifiedOn;
 
 	@Column(name="real_price")
 	private String realPrice;
@@ -63,13 +56,7 @@ public class SbDailyStock implements Serializable {
 		this.stockId = stockId;
 	}
 
-	public Timestamp getCreatedOn() {
-		return this.createdOn;
-	}
-
-	public void setCreatedOn(Timestamp createdOn) {
-		this.createdOn = createdOn;
-	}
+	
 
 	public String getIsActive() {
 		return this.isActive;
@@ -93,14 +80,6 @@ public class SbDailyStock implements Serializable {
 
 	public void setItemCode(String itemCode) {
 		this.itemCode = itemCode;
-	}
-
-	public Timestamp getModifiedOn() {
-		return this.modifiedOn;
-	}
-
-	public void setModifiedOn(Timestamp modifiedOn) {
-		this.modifiedOn = modifiedOn;
 	}
 
 	public String getRealPrice() {

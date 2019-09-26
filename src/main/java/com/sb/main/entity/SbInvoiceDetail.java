@@ -11,16 +11,13 @@ import javax.persistence.*;
 @Entity
 @Table(name="sb_invoice_detail")
 @NamedQuery(name="SbInvoiceDetail.findAll", query="SELECT s FROM SbInvoiceDetail s")
-public class SbInvoiceDetail implements Serializable {
+public class SbInvoiceDetail extends BaseEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="invoice_detail_id")
 	private int invoiceDetailId;
-
-	@Column(name="created_on")
-	private String createdOn;
 
 	private String discount;
 
@@ -42,9 +39,6 @@ public class SbInvoiceDetail implements Serializable {
 	@Column(name="item_wholesale_price")
 	private int itemWholesalePrice;
 
-	@Column(name="modified_on")
-	private String modifiedOn;
-
 	public SbInvoiceDetail() {
 	}
 
@@ -56,13 +50,6 @@ public class SbInvoiceDetail implements Serializable {
 		this.invoiceDetailId = invoiceDetailId;
 	}
 
-	public String getCreatedOn() {
-		return this.createdOn;
-	}
-
-	public void setCreatedOn(String createdOn) {
-		this.createdOn = createdOn;
-	}
 
 	public String getDiscount() {
 		return this.discount;
@@ -118,14 +105,6 @@ public class SbInvoiceDetail implements Serializable {
 
 	public void setItemWholesalePrice(int itemWholesalePrice) {
 		this.itemWholesalePrice = itemWholesalePrice;
-	}
-
-	public String getModifiedOn() {
-		return this.modifiedOn;
-	}
-
-	public void setModifiedOn(String modifiedOn) {
-		this.modifiedOn = modifiedOn;
 	}
 
 }

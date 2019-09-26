@@ -12,16 +12,13 @@ import java.sql.Timestamp;
 @Entity
 @Table(name="sb_user_profile")
 @NamedQuery(name="SbUserProfile.findAll", query="SELECT s FROM SbUserProfile s")
-public class SbUserProfile implements Serializable {
+public class SbUserProfile extends BaseEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="user_profile_id")
 	private int userProfileId;
-
-	@Column(name="created_on")
-	private Timestamp createdOn;
 
 	@Column(name="default_add")
 	private String defaultAdd;
@@ -35,8 +32,6 @@ public class SbUserProfile implements Serializable {
 	@Column(name="mobile_num")
 	private int mobileNum;
 
-	@Column(name="modified_on")
-	private Timestamp modifiedOn;
 
 	@Column(name="secondary_add")
 	private String secondaryAdd;
@@ -55,13 +50,6 @@ public class SbUserProfile implements Serializable {
 		this.userProfileId = userProfileId;
 	}
 
-	public Timestamp getCreatedOn() {
-		return this.createdOn;
-	}
-
-	public void setCreatedOn(Timestamp createdOn) {
-		this.createdOn = createdOn;
-	}
 
 	public String getDefaultAdd() {
 		return this.defaultAdd;
@@ -95,13 +83,6 @@ public class SbUserProfile implements Serializable {
 		this.mobileNum = mobileNum;
 	}
 
-	public Timestamp getModifiedOn() {
-		return this.modifiedOn;
-	}
-
-	public void setModifiedOn(Timestamp modifiedOn) {
-		this.modifiedOn = modifiedOn;
-	}
 
 	public String getSecondaryAdd() {
 		return this.secondaryAdd;

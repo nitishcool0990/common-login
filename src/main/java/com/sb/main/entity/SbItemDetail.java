@@ -16,7 +16,7 @@ public class SbItemDetail implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="item_details_id")
 	private int itemDetailsId;
 

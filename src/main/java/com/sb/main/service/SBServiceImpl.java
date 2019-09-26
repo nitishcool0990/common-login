@@ -5,8 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.sb.main.dao.SBInvoiceDetailDao;
 
-@Service
-
+@Service(value = "sbService")
 public class SBServiceImpl implements SBService {
 	
 	@Autowired
