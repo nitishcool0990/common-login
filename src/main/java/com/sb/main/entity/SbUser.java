@@ -41,7 +41,8 @@ public class SbUser implements Serializable {
 
 	@Column(name="modified_on")
 	private Timestamp modifiedOn;
-
+	
+	@Column(name="password")
 	private String password;
 
 	private String reason;

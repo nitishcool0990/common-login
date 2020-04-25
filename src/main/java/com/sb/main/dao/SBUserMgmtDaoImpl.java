@@ -11,7 +11,7 @@ import com.sb.main.repository.SBUserRepository;
 
 
 @Repository
-@Transactional(readOnly = true, propagation = Propagation.SUPPORTS)
+//@Transactional(readOnly = true, propagation = Propagation.SUPPORTS)
 public class SBUserMgmtDaoImpl implements SbUserMgmtDao{
 
 	@Autowired
@@ -45,6 +45,10 @@ public class SBUserMgmtDaoImpl implements SbUserMgmtDao{
 		return sbUserProfileReturn;
 	}
 
+	@Override
+	public SbUser getUserByUserNameAndPassword(String userName,String password) {
+		return sbUserRepo.findByUserNameAndPassword(userName,password);
+	}
 	
 	
 	

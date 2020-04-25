@@ -2,6 +2,13 @@ package com.sb.main.dto;
 
 import java.util.Map;
 
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+import com.google.common.annotations.Beta;
+
+
+
 public class ResponseBodyDTO {
 
 	protected Boolean isSuccess = Boolean.TRUE;

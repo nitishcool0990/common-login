@@ -8,6 +8,7 @@ public interface SbUserMgmtDao  {
 	public abstract SbUserProfile getUserProfileByUserId(int id);
 	public SbUser createUser(SbUser sbUserEntity);
 	public SbUserProfile createUserProfile(SbUserProfile sbUserProfileEntity);
+	public SbUser getUserByUserNameAndPassword(String userName,String password);
 
 
 }
