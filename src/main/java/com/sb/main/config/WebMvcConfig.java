@@ -19,7 +19,7 @@ public class WebMvcConfig  extends WebMvcConfigurerAdapter	 {
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
 		
-	//	registry.addInterceptor(validateSmartfoxTokenInterceptor()).excludePathPatterns(new String[] { "/commonService/login"});
+		registry.addInterceptor(validateSmartfoxTokenInterceptor()).excludePathPatterns(new String[] { "/commonService/login","/logout"});
 		
 		
 	}
