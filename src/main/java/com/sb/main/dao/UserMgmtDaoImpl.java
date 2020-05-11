@@ -2,27 +2,25 @@ package com.sb.main.dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
-import com.sb.main.entity.SbUser;
+import com.sb.main.entity.UserLoginDetails;
 import com.sb.main.entity.SbUserProfile;
 import com.sb.main.repository.SBUserProfileRepo;
-import com.sb.main.repository.SBUserRepository;
+import com.sb.main.repository.UserRepository;
 
 
 @Repository
 //@Transactional(readOnly = true, propagation = Propagation.SUPPORTS)
-public class SBUserMgmtDaoImpl implements SbUserMgmtDao{
+public class UserMgmtDaoImpl implements UserMgmtDao{
 
 	@Autowired
-	private SBUserRepository sbUserRepo ;
+	private UserRepository sbUserRepo ;
 	
 	@Autowired
 	private SBUserProfileRepo sbUserProfileRepo ;
 	
 
 	@Override
-	public SbUser getUserByID(int id) {
+	public UserLoginDetails getUserByID(int id) {
 		sbUserRepo.findById(id);
 		return null;
 	}
@@ -34,8 +32,8 @@ public class SBUserMgmtDaoImpl implements SbUserMgmtDao{
 	}
 
 	@Override
-	public SbUser createUser(SbUser sbUserEntity) {
-		SbUser SbUserReturn = sbUserRepo.saveAndFlush(sbUserEntity);
+	public UserLoginDetails createUser(UserLoginDetails sbUserEntity) {
+		UserLoginDetails SbUserReturn = sbUserRepo.saveAndFlush(sbUserEntity);
 		return SbUserReturn;
 	}
 
@@ -46,7 +44,7 @@ public class SBUserMgmtDaoImpl implements SbUserMgmtDao{
 	}
 
 	@Override
-	public SbUser getUserByUserNameAndPassword(String userName,String password) {
+	public UserLoginDetails getUserByUserNameAndPassword(String userName,String password) {
 		return sbUserRepo.findByUserNameAndPassword(userName,password);
 	}
 	

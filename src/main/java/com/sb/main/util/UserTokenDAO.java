@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 ///import com.gn.config.Constants;
 
 @Repository
-public class SFSTokenDAO {
+public class UserTokenDAO {
 
 	@Autowired
 	@Qualifier("stringRedisTemplate")

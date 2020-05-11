@@ -8,7 +8,7 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
-import com.sb.main.util.SFSTokenDAO;
+import com.sb.main.util.UserTokenDAO;
 
 public class ValidateSmartfoxTokenInterceptor extends HandlerInterceptorAdapter {
 	
@@ -22,7 +22,7 @@ public class ValidateSmartfoxTokenInterceptor extends HandlerInterceptorAdapter 
 
 	
 	@Autowired
-	private SFSTokenDAO repository;
+	private UserTokenDAO repository;
 	
 	@Override
 	public boolean preHandle(HttpServletRequest request,

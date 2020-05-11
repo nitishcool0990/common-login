@@ -4,12 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-
-import com.sb.main.dao.SbUserMgmtDao;
-import com.sb.main.dto.ResponseBodyDTO;
+import com.sb.main.dao.UserMgmtDao;
 import com.sb.main.dto.UserDetailDTO;
 import com.sb.main.dto.UserLoginDTO;
-import com.sb.main.entity.SbUser;
+import com.sb.main.entity.UserLoginDetails;
 import com.sb.main.entity.SbUserProfile;
 import com.sb.main.mapper.UserMgmtMapper;
 
@@ -18,7 +16,7 @@ import com.sb.main.mapper.UserMgmtMapper;
 public class UserMgmtServiceImpl implements IUserMgmtService{
 
 	@Autowired
-	private SbUserMgmtDao sbUserMgmtDao;
+	private UserMgmtDao sbUserMgmtDao;
 	@Autowired
 	private UserMgmtMapper userMgmtMapper;
 	
@@ -35,8 +33,8 @@ public class UserMgmtServiceImpl implements IUserMgmtService{
 
 	@Override
 	@Transactional(readOnly = false, propagation = Propagation.REQUIRED)
-	public SbUser loginUser(UserLoginDTO userLoginDto) {
-		SbUser sbUser = null;
+	public UserLoginDetails loginUser(UserLoginDTO userLoginDto) {
+		UserLoginDetails sbUser = null;
 		try {
 			sbUser = sbUserMgmtDao.getUserByUserNameAndPassword(userLoginDto.getUsername(), userLoginDto.getPassword());
 		}catch(Exception e) {

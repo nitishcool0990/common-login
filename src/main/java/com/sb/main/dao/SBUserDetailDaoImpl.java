@@ -4,21 +4,21 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.sb.main.entity.SbUser;
+import com.sb.main.entity.UserLoginDetails;
 import com.sb.main.entity.SbUserProfile;
 import com.sb.main.repository.SBUserProfileRepo;
-import com.sb.main.repository.SBUserRepository;
+import com.sb.main.repository.UserRepository;
 
 public class SBUserDetailDaoImpl implements SbUserDetailDao{
 
 	@Autowired
-	private SBUserRepository sbUserRepo ;
+	private UserRepository sbUserRepo ;
 	
 	@Autowired
 	private SBUserProfileRepo sbUserProfileRepo ;
 
 	@Override
-	public SbUser getUserByID(int id) {
+	public UserLoginDetails getUserByID(int id) {
 		sbUserRepo.findById(id);
 		return null;
 	}
@@ -30,7 +30,7 @@ public class SBUserDetailDaoImpl implements SbUserDetailDao{
 	}
 
 	@Override
-	public List<SbUser> getUserByWhatsappNumber(String whatsappNumber) {
+	public List<UserLoginDetails> getUserByWhatsappNumber(String whatsappNumber) {
 		// TODO Auto-generated method stub
 		
 		return sbUserRepo.findByWatsappNum(whatsappNumber);

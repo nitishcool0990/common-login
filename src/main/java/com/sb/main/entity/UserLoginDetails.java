@@ -12,7 +12,7 @@ import java.sql.Timestamp;
 @Entity
 @Table(name="sb_user")
 @NamedQuery(name="SbUser.findAll", query="SELECT s FROM SbUser s")
-public class SbUser implements Serializable {
+public class UserLoginDetails implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -50,7 +50,7 @@ public class SbUser implements Serializable {
 	@Column(name="watsapp_num")
 	private String watsappNum;
 
-	public SbUser() {
+	public UserLoginDetails() {
 	}
 
 	public int getUserId() {
